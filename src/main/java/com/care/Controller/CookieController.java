@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -25,7 +26,7 @@ public class CookieController {
 		
 		return "cookie";
 	}
-	*/
+	
 	
 	@RequestMapping("cookie")	
 	public String myCookie(HttpServletResponse response,
@@ -45,6 +46,35 @@ public class CookieController {
 		response.addCookie(cookie);
 		
 		return "cookie";
+	}
+	*/
+	
+	@RequestMapping("cookie")	
+	public String myCookie(HttpServletResponse response,
+			@CookieValue(value = "myCookie", required = false) Cookie cook, Model model) {
+		
+		if(cook != null) {
+			model.addAttribute("popUpCookie", cook.getValue());
+		}
+	
+		return "cookie";
+	}
+	
+	@RequestMapping("popUp")	
+	public String myCookie() {
+
+		return "popUp";
+	}
+	
+	@RequestMapping("cookiChk")	
+	public String cookiChk(HttpServletResponse response) {
+
+		Cookie cookie = new Cookie("myCookie", "쿠키생성");
+		cookie.setMaxAge(5);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		
+		return "popUp";
 	}
 	
 }

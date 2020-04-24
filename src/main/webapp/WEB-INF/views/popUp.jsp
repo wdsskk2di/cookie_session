@@ -1,4 +1,3 @@
-<%@page import="org.springframework.web.servlet.tags.Param"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,17 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<script>
-	function popup() {
-		if("${popUpCookie}" == ""){
-			window.open("popUp","");
-		}
+<script type="text/javascript">
+	function checkClik() {
+		location.href="cookiChk";
+		window.close();
 	}
 </script>
 
 </head>
-<body onload="popup()">
-cookie 페이지
+<body>
+쿠키를 위한 팝업창<br>
+<input type="checkbox" onclick="checkClik()">하루동안 열지 않음
 
 </body>
 </html>
