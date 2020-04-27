@@ -70,7 +70,7 @@ public class CookieController {
 	public String cookiChk(HttpServletResponse response, Model model) {
 
 		Cookie cookie = new Cookie("myCookie", "쿠키생성");
-		cookie.setMaxAge(15);
+		cookie.setMaxAge(50);
 		cookie.setPath("/");
 		response.addCookie(cookie);
 		

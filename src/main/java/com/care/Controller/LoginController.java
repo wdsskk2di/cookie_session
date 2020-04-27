@@ -22,12 +22,15 @@ public class LoginController {
 			model.addAttribute("popUpCookie", cook.getValue());	//attribute 추가(팝업 유무 체크 위해)
 		}
 		
-		if(session.getAttribute("loginUser") != null) {	//로그인 상태면 AlreadyLogin 페이지로 이동
-			return "login/AlreadyLogin";
-		}else {	//로그인 되지 않았다면 login 페이지로 이동
-			return "login/login";
-		}
+		//Quiz! 방법1. AleadyLogin 페이지를 만들어 쓴다
+//		if(session.getAttribute("loginUser") != null) {	//로그인 상태면 AlreadyLogin 페이지로 이동
+//			return "login/AlreadyLogin";
+//		}else {	//로그인 되지 않았다면 login 페이지로 이동
+//			return "login/login";
+//		}
 		
+		//Quiz! 방법2. login.jsp에서 jstl을 이용해 로그인 상태에 따른 페이지 출력을 구분한다
+		return "login/login";
 	}
 	
 	//입력된 아이디와 비번 체크
@@ -54,7 +57,7 @@ public class LoginController {
 	
 	//logout 페이지
 	@RequestMapping("logout")
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session, Model model) {
 		session.invalidate();	//세션 제거
 		return "login/logout";
 	}

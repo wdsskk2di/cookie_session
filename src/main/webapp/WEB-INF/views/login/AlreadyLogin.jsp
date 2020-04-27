@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<jsp:include page="../cookie.jsp"/>
+	
 	${loginUser}님 로그인 상태 입니다<br>
 	<a href="main">main 이동</a>
 </body>

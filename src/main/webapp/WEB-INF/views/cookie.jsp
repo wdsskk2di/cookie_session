@@ -17,7 +17,7 @@
 
 </head>
 <body onload="popup()">
-cookie 페이지
+cookie 페이지<hr>
 
 </body>
 </html>
