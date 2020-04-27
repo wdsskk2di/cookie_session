@@ -10,7 +10,7 @@
 <script>
 	function popup() {
 		if("${popUpCookie}" == ""){
-			window.open("popUp","");
+			window.open("popUp","","");
 		}
 	}
 </script>

@@ -67,12 +67,14 @@ public class CookieController {
 	}
 	
 	@RequestMapping("cookiChk")	
-	public String cookiChk(HttpServletResponse response) {
+	public String cookiChk(HttpServletResponse response, Model model) {
 
 		Cookie cookie = new Cookie("myCookie", "쿠키생성");
-		cookie.setMaxAge(5);
+		cookie.setMaxAge(50);
 		cookie.setPath("/");
 		response.addCookie(cookie);
+		
+		model.addAttribute("makeCookie", "쿠키체크");
 		
 		return "popUp";
 	}
