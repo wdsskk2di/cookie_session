@@ -9,9 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class sessionController {
 
+	/* 세션 추가 방법1
 	@RequestMapping("makeSession")
 	public String makeSession(HttpServletRequest request) {
 		HttpSession session = request.getSession();
+		session.setAttribute("id", "하나");
+		session.setAttribute("age", "20");
+		session.setAttribute("addr", "마포");
+		
+		return "session/makeSession";
+	}
+	*/
+	
+	//세션 추가 방법2
+	@RequestMapping("makeSession")
+	public String makeSession(HttpServletRequest request, HttpSession session) {
 		session.setAttribute("id", "하나");
 		session.setAttribute("age", "20");
 		session.setAttribute("addr", "마포");
