@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-	function checkClik() {
+
+	function checkClik() { //쿠키 생성하러 이동
 		location.href="cookiChk";		
 	}
 	
-	function cookieChk() {
+	function cookieChk() {	//쿠키 생성하고 돌아와서 창을 닫는다
 		if("${makeCookie}"=="쿠키체크"){
 			window.close();
 		}
