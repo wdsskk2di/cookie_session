@@ -143,6 +143,7 @@
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
+                    <encoding>UTF-8</encoding>	<!-- 젠킨스 인코딩 방식 추가로 오류 방지 -->
                 </configuration>
             </plugin>
             <plugin>
