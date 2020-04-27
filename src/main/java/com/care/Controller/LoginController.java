@@ -66,9 +66,12 @@ public class LoginController {
 		return "login/main";
 	}
 	
-	//로그인 상태에서 login 페이지 접근
-	@RequestMapping("AlreadyLogin")
-	public String AlreadyLogin() {
-		return "login/AlreadyLogin";
-	}
+	
+	//Controller의 login에서 사용하지만, 웹페이지에서 AlreadyLogin을 직접 연결하지 않아 필요 없음
+	//로그인 상태에서 login 페이지 접근 시 AlreadyLogin
+//	@RequestMapping("AlreadyLogin")
+//	public String AlreadyLogin() {
+//		return "login/AlreadyLogin";
+//	}
+	
 }

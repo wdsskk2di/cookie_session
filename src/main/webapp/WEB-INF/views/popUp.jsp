@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	#popUp{resize: none; }
+</style>
 
 <script type="text/javascript">
 
@@ -20,7 +23,7 @@
 </script>
 
 </head>
-<body onload="cookieChk()">
+<body id="popUp" onload="cookieChk()">
 쿠키를 위한 팝업창<br>
 <input type="checkbox" onclick="checkClik()">하루동안 열지 않음
 
